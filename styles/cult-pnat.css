@@ -1,0 +1,193 @@
+/* Styles spécifiques pour la page patrimoine culturel et naturel */
+.main-content-cult-pnat {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.main-content-cult-pnat h2 {
+    color: #006400;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.main-content-cult-pnat h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #F4D03F;
+}
+
+/* Sections de patrimoine */
+.patrimoine-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.patrimoine-item {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.patrimoine-item:hover {
+    transform: translateY(-5px);
+}
+
+.patrimoine-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.patrimoine-content {
+    padding: 25px;
+}
+
+.patrimoine-content h3 {
+    color: #1B3C6A;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.patrimoine-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #F4D03F;
+}
+
+.patrimoine-content p {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Style des filtres */
+.patrimoine-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 8px 20px;
+    background-color: white;
+    border: 2px solid #006400;
+    border-radius: 20px;
+    color: #006400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background-color: #006400;
+    color: white;
+}
+
+/* Boutons en savoir plus */
+.learn-more {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #006400;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    background-color: #005000;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .patrimoine-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content-cult-pnat {
+        padding: 20px 15px;
+        padding-top: 130px;
+    }
+    
+    .main-content-cult-pnat h2 {
+        font-size: 1.5rem;
+        padding-top: 130px;
+    }
+    
+    .patrimoine-filters {
+        justify-content: center;
+    }
+    
+    .filter-button {
+        flex-basis: calc(50% - 10px);
+        text-align: center;
+        margin: 5px;
+    }
+    
+    .patrimoine-item {
+        margin-bottom: 20px;
+    }
+    
+    .patrimoine-image {
+        height: 200px;
+    }
+    
+    .patrimoine-content {
+        padding: 20px;
+    }
+    
+    .patrimoine-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .learn-more {
+        width: 100%;
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .patrimoine-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-button {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .patrimoine-image {
+        height: 180px;
+    }
+    
+    .patrimoine-content p {
+        font-size: 0.9rem;
+    }
+}

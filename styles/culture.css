@@ -1,0 +1,120 @@
+/* Styles spécifiques pour la page culture */
+.main-content-culture {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Style du titre principal */
+.main-content-culture h2 {
+    color: #006400;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    position: relative;
+    padding: 0 20px;
+}
+
+.main-content-culture h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #F4D03F;
+}
+
+/* Liste des conventions */
+.conventions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 40px auto 0;
+}
+
+/* Style des boutons des conventions */
+.convention-btn {
+    background-color: white;
+    border: 2px solid #006400;
+    border-radius: 12px;
+    padding: 20px 30px;
+    color: #1B3C6A;
+    text-decoration: none;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    padding-right: 50px;
+}
+
+.convention-btn:hover {
+    transform: translateX(10px);
+    background-color: #f8f9fa;
+    border-color: #F4D03F;
+}
+
+.convention-btn::after {
+    content: '→';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.convention-btn:hover::after {
+    opacity: 1;
+}
+
+/* Animation d'entrée pour les conventions */
+.conventions-list a {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Application de délais différents pour chaque convention */
+.conventions-list a:nth-child(1) { animation-delay: 0.1s; }
+.conventions-list a:nth-child(2) { animation-delay: 0.2s; }
+.conventions-list a:nth-child(3) { animation-delay: 0.3s; }
+.conventions-list a:nth-child(4) { animation-delay: 0.4s; }
+.conventions-list a:nth-child(5) { animation-delay: 0.5s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content-culture {
+        padding: 20px 15px;
+    }
+
+    .main-content-culture h2 {
+        font-size: 1.4rem;
+        padding: 0 10px;
+    }
+
+    .convention-btn {
+        padding: 15px 20px;
+        font-size: 1rem;
+        padding-right: 40px;
+    }
+
+    .convention-btn:hover {
+        transform: translateX(5px);
+    }
+}

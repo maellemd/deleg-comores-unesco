@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrimoine Culturel et Naturel des Comores  - Délégation des Comores</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles/cult-pnat.css" rel="stylesheet">
+    <link href="styles/index.css" rel="stylesheet">
+    <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="mailto:dl.comoros@unesco-delegations.org"><i class="fas fa-envelope"></i>
+                dl.comoros@unesco-delegations.org</a>
+            <a href="#"><i class="fas fa-phone"></i> 01 45 68 28 21 • 01 45 68 28 23</a>
+        </div>
+        <h1>Délégation de l'UNION des Comores auprès de l'UNESCO</h1>
+        <div class="main-nav">
+            <div class="logo">
+                <a href="index.html"><img src="img/drapeau-comores.jpg" alt="Logo"></a>
+            </div>
+            <button class="hamburger" aria-label="Menu mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="comores.html">Découvrir les Comores</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li class="active">
+                        <a href="culture.html">Culture ▼</a>
+                        <ul class="sub-menu">
+                            <li class="active"><a href="cult-pnat.html">Patrimoine culturel et naturel</a></li>
+                            <li><a href="cult-pimmateriel.html">Patrimoine immatériel</a></li>
+                    </li>
+                </ul>
+                <li><a href="sciences-hs.html">Sciences humaines et sociales</a></li>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li>
+                    <a href="contact.html">Contact ▼</a>
+                    <ul class="sub-menu">
+                        <li><a href="representants.html">Représentants</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content-cult-pnat">
+        <h2>Patrimoine Culturel et Naturel des Comores</h2>
+
+        <div class="patrimoine-filters">
+            <button class="filter-button active" data-filter="all">Tout</button>
+            <button class="filter-button" data-filter="naturel">Patrimoine Naturel</button>
+            <button class="filter-button" data-filter="culturel">Patrimoine Culturel</button>
+        </div>
+
+        <div class="patrimoine-grid">
+            <div class="patrimoine-item" data-category="naturel">
+                <img src="img/mont-karthala.jpg" alt="Mont Karthala" class="patrimoine-image">
+                <div class="patrimoine-content">
+                    <h3>Mont Karthala</h3>
+                    <p>Le Mont Karthala, volcan actif situé sur l'île de la Grande Comore, est le plus grand volcan
+                        actif de l'océan Indien. Avec une hauteur de 2 361 mètres, il offre un paysage géologique unique
+                        et spectaculaire.</p>
+                    <a href="#" class="learn-more">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="patrimoine-item" data-category="culturel">
+                <img src="img/mosquee-vendredi.jpg" alt="Mosquée du Vendredi" class="patrimoine-image">
+                <div class="patrimoine-content">
+                    <h3>Mosquée du Vendredi</h3>
+                    <p>Située à Moroni, la capitale des Comores, la Mosquée du Vendredi est un joyau architectural qui
+                        reflète l'histoire islamique riche de l'archipel. Son architecture témoigne des influences
+                        swahili et arabes.</p>
+                    <a href="#" class="learn-more">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="patrimoine-item" data-category="naturel">
+                <img src="img/recifs-coralliens.jpg" alt="Récifs Coralliens" class="patrimoine-image">
+                <div class="patrimoine-content">
+                    <h3>Récifs Coralliens</h3>
+                    <p>Les Comores possèdent des écosystèmes coralliens parmi les plus riches et les mieux préservés de
+                        l'océan Indien. Ces récifs abritent une biodiversité marine remarquable et jouent un rôle
+                        crucial dans l'équilibre écologique.</p>
+                    <a href="#" class="learn-more">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="patrimoine-item" data-category="culturel">
+                <img src="img/medina-moroni.jpg" alt="Médina de Moroni" class="patrimoine-image">
+                <div class="patrimoine-content">
+                    <h3>Médina de Moroni</h3>
+                    <p>La vieille ville de Moroni, avec ses ruelles étroites et son architecture traditionnelle, est un
+                        témoignage vivant de l'histoire et de la culture comoriennes. Ses maisons en pierre de corail
+                        racontent des siècles de traditions.</p>
+                    <a href="#" class="learn-more">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <img src="img/unesco.jpg" alt="Logo UNESCO" class="unesco-logo">
+                <div class="contact-info">
+                    <a href="mailto:dl.comoros@unesco-delegations.org"><i class="fas fa-envelope"></i>
+                        dl.comoros@unesco-delegations.org</a>
+                    <a href="#"><i class="fas fa-phone"></i> 01 45 68 28 21 • 01 45 68 28 23</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=31+rue+François+Bonvin+75015+Paris"
+                        target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> 31 rue François
+                        Bonvin, 75015 Paris</a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://x.com/dlcomores" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/comoresunesco/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Filtres de patrimoine
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const patrimoineitems = document.querySelectorAll('.patrimoine-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Mettre à jour l'état actif des boutons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filtrer les éléments
+                const filter = button.dataset.filter;
+                patrimoineitems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

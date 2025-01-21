@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éducation - Délégation des Comores</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles/education.css" rel="stylesheet">
+    <link href="styles/index.css" rel="stylesheet">
+    <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="mailto:dl.comoros@unesco-delegations.org"><i class="fas fa-envelope"></i> dl.comoros@unesco-delegations.org</a>
+            <a href="#"><i class="fas fa-phone"></i> 01 45 68 28 21 • 01 45 68 28 23</a>
+        </div>
+        <h1>Délégation de l'UNION des Comores auprès de l'UNESCO</h1>
+        <div class="main-nav">
+            <div class="logo">
+                <a href="index.html"><img src="img/drapeau-comores.jpg" alt="Logo"></a>
+            </div>
+            <button class="hamburger" aria-label="Menu mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="comores.html">Découvrir les Comores</a></li>
+                    <li class="active"><a href="education.html">Education</a></li>
+                    <li>
+                        <a href="culture.html">Culture ▼</a>
+                        <ul class="sub-menu">
+                            <li><a href="cult-pnat.html">Patrimoine culturel et naturel</a></li>
+                            <li><a href="cult-pimmateriel.html">Patrimoine immatériel</a></li>
+                    </li>
+                </ul>
+                <li><a href="sciences-hs.html">Sciences humaines et sociales</a></li>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li>
+                    <a href="contact.html">Contact ▼</a>
+                    <ul class="sub-menu">
+                        <li><a href="representants.html">Représentants</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Contenu principal  -->
+    <main class="main-content container">
+        <p>Le pays est en cours de ratification de la <strong>Convention mondiale sur la reconnaissance des
+                qualifications relatives à l'enseignement supérieur</strong>.</p>
+
+        <p>La Délégation travaille avec l'UNESCO pour la mise en œuvre du <strong>Programme Priorité Afrique</strong>
+            (la Stratégie opérationnelle pour la priorité Afrique 2022-2024 notamment le programme phare 1 campus
+            Afrique : renforcement de l'enseignement supérieur en Afrique).</p>
+
+        <p>(La délégation travaille avec le ministère de l'enseignement supérieur et l'université des Comores pour la
+            mise en place de ces programmes).</p>
+    </main>
+    <div class="gallery-container">
+        <div class="gallery-grid" id="gallery">
+            <!-- Voir tout en bas dans le script JS pour ajouter les images, ne rien ajouter ici -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <button class="modal-nav modal-prev" onclick="changeImage(-1)">❮</button>
+            <button class="modal-nav modal-next" onclick="changeImage(1)">❯</button>
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-description" id="modalDescription"></div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <img src="img/unesco.jpg" alt="Logo UNESCO" class="unesco-logo">
+                <div class="contact-info">
+                    <a href="mailto:dl.comoros@unesco-delegations.org"><i class="fas fa-envelope"></i> dl.comoros@unesco-delegations.org</a>
+                    <a href="#"><i class="fas fa-phone"></i> 01 45 68 28 21 • 01 45 68 28 23</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=31+rue+François+Bonvin+75015+Paris"
+                        target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> 31 rue François
+                        Bonvin, 75015 Paris</a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://x.com/dlcomores" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/comoresunesco/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+    <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+    <script src="script.js"></script>
+    <script>
+        // C'est ici qu'on met les images de la galerie
+        const images = [
+            {
+                url: "img/photo1.jpg",
+                description: "Description de l'image 1"
+            },
+            {
+                url: "img/photo2.jpg",
+                description: "Description de l'image 2"
+            },
+            {
+                url: "img/photo3.jpg",
+                description: "Description de l'image 3"
+            },
+            {
+                url: "/api/placeholder/800/600",
+                description: "Description de l'image 4"
+            }
+        ];
+
+        let currentImageIndex = 0;
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+
+        // Création de la galerie
+        const gallery = document.getElementById('gallery');
+        images.forEach((image, index) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.innerHTML = `<img src="${image.url}" alt="Image ${index + 1}">`;
+            item.onclick = () => openModal(index);
+            gallery.appendChild(item);
+        });
+
+        function openModal(index) {
+            currentImageIndex = index;
+            updateModalImage();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Empêche le défilement
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Réactive le défilement
+        }
+        function openModal(index) {
+            currentImageIndex = index;
+            updateModalImage();
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+        function changeImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            updateModalImage();
+        }
+
+        function updateModalImage() {
+            modalImage.src = images[currentImageIndex].url;
+            modalDescription.textContent = images[currentImageIndex].description;
+        }
+
+        // Fermeture au clic en dehors de l'image
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        };
+
+        // Gestion des touches clavier
+        document.addEventListener('keydown', (e) => {
+            if (modal.style.display === 'block') {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+/* Styles spécifiques pour la page actualités */
+.main-content-actualites {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Personnalisation du widget RSS */
+.rssapp-list {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+/* Style des articles */
+.rssapp-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.rssapp-item:hover {
+    transform: translateX(10px);
+    background-color: #f8f9fa;
+}
+
+.rssapp-item-title {
+    color: #1B3C6A;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.rssapp-item-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.rssapp-item-description {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Style des liens */
+.rssapp-item a {
+    color: #006400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rssapp-item a:hover {
+    color: #F4D03F;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content-actualites {
+        padding: 20px 15px;
+    }
+
+    .rssapp-item {
+        padding: 15px 0;
+    }
+
+    .rssapp-item-title {
+        font-size: 1.1rem;
+    }
+}

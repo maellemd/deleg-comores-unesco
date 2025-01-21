@@ -1,0 +1,203 @@
+/* Styles pour la page sciences humaines et sociales */
+.main-content-sciences-hs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.main-content-sciences-hs h2 {
+    color: #006400;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.main-content-sciences-hs h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #F4D03F;
+}
+
+/* Style des conteneurs */
+.conteneur1 {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+
+.conteneur1:hover {
+    transform: translateY(-5px);
+}
+
+.conteneur1 p {
+    color: #2c3e50;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.conteneur2,
+.conteneur3,
+.conteneur4,
+.conteneur5 {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+
+.conteneur2:hover,
+.conteneur3:hover,
+.conteneur4:hover,
+.conteneur5:hover {
+    transform: translateY(-5px);
+}
+
+/* Style des images */
+.conteneur2 img,
+.conteneur3 img,
+.conteneur4 img,
+.conteneur5 img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.conteneur2 img:hover,
+.conteneur3 img:hover,
+.conteneur4 img:hover,
+.conteneur5 img:hover {
+    transform: scale(1.05);
+}
+
+.conteneur2 p,
+.conteneur3 p,
+.conteneur4 p,
+.conteneur5 p {
+    color: #2c3e50;
+    line-height: 1.6;
+    flex: 1;
+}
+
+/* Alternance de la direction des conteneurs */
+.conteneur3,
+.conteneur5 {
+    flex-direction: row-reverse;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .conteneur2,
+    .conteneur3,
+    .conteneur4,
+    .conteneur5 {
+        gap: 20px;
+        padding: 25px;
+    }
+
+    .conteneur2 img,
+    .conteneur3 img,
+    .conteneur4 img,
+    .conteneur5 img {
+        width: 250px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content-sciences-hs {
+        padding: 20px 15px;
+    }
+
+    .main-content-sciences-hs h2 {
+        font-size: 1.5rem;
+    }
+
+    .conteneur1 {
+        padding: 20px;
+    }
+
+    .conteneur1 p {
+        font-size: 0.95rem;
+    }
+
+    .conteneur2,
+    .conteneur3,
+    .conteneur4,
+    .conteneur5 {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .conteneur2 img,
+    .conteneur3 img,
+    .conteneur4 img,
+    .conteneur5 img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .conteneur2 p,
+    .conteneur3 p,
+    .conteneur4 p,
+    .conteneur5 p {
+        font-size: 0.9rem;
+    }
+
+    /* Alternance pour le mode mobile */
+    .conteneur3,
+    .conteneur5 {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content-sciences-hs h2 {
+        font-size: 1.3rem;
+    }
+
+    .conteneur1,
+    .conteneur2,
+    .conteneur3,
+    .conteneur4,
+    .conteneur5 {
+        margin-bottom: 25px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .conteneur1 p,
+    .conteneur2 p,
+    .conteneur3 p,
+    .conteneur4 p,
+    .conteneur5 p {
+        font-size: 0.85rem;
+    }
+
+    .conteneur2 img,
+    .conteneur3 img,
+    .conteneur4 img,
+    .conteneur5 img {
+        max-width: 250px;
+    }
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Représentants - Délégation des Comores</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles/representants.css" rel="stylesheet">
+    <link href="styles/index.css" rel="stylesheet">
+    <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+</head>
+
+<body>
+    <!-- Bandeau avec adresse et numéro de telephone -->
+    <header>
+        <div class="top-bar">
+            <a href="mailto:dl.comoros@unesco-delegations.org"><i class="fas fa-envelope"></i>
+                dl.comoros@unesco-delegations.org</a>
+            <a href="#"><i class="fas fa-phone"></i> 01 45 68 28 21 • 01 45 68 28 23</a>
+        </div>
+        <h1>Délégation de l'UNION des Comores auprès de l'UNESCO</h1>
+        <!-- Barre de navigation -->
+        <div class="main-nav">
+            <div class="logo">
+                <a href="index.html"><img src="img/drapeau-comores.jpg" alt="Logo"></a>
+            </div>
+            <!-- Menu hamburger (pour la version mobile) -->
+            <button class="hamburger" aria-label="Menu mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="comores.html">Découvrir les Comores</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li>
+                        <a href="culture.html">Culture ▼</a>
+                        <ul class="sub-menu">
+                            <li><a href="cult-pnat.html">Patrimoine culturel et naturel</a></li>
+                            <li><a href="cult-pimmateriel.html">Patrimoine immatériel</a></li>
+                    </li>
+                </ul>
+                <li><a href="sciences-hs.html">Sciences humaines et sociales</a></li>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li class="active">
+                    <a href="contact.html">Contact ▼</a>
+                    <ul class="sub-menu">
+                        <li class="active"><a href="representants.html">Représentants</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profil Employé</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="employee">
+                <div class="employee-info">
+                    <h2>Dr Kassim MOHAMED-SOYIR BAJRAFIL</h2>
+                    <p>Ambassadeur Délégué permanent de l’Union des Comores
+                        auprès de l’UNESCO.</p>
+                </div>
+                <a href="img/cv_bajrafil.pdf" target="_blank" class="cv-button">CV</a>
+            </div>
+
+            <div class="employee">
+                <div class="employee-info">
+                    <h2>Amina HASSANE ALFEINE</h2>
+                    <p>Conseillère permanente de l’Union des Comores auprès de l’UNESCO.</p>
+                </div>
+            </div>
+
+            <div class="employee">
+                <div class="employee-info">
+                    <h2>Dr Mohamed HAMADI</h2>
+                    <p>Attaché, Délégué permanent de l’Union des Comores auprès de l’UNESCO.</p>
+                </div>
+                <a href="img/cv_hamadi.pdf" target="_blank" class="cv-button">CV</a>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-info">
+                    <img src="img/unesco.jpg" alt="Logo UNESCO" class="unesco-logo">
+                    <div class="contact-info">
+                        <a href="mailto:dl.comoros@unesco-delegations.org"><i class="fas fa-envelope"></i>
+                            dl.comoros@unesco-delegations.org</a>
+                        <a href="#"><i class="fas fa-phone"></i> 01 45 68 28 21 • 01 45 68 28 23</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=31+rue+François+Bonvin+75015+Paris"
+                            target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt"></i> 31 rue
+                            François Bonvin, 75015 Paris</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://x.com/dlcomores" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/comoresunesco/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 - Tous droits réservés</p>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script>
+            // Configuration de PDF.js
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+            let currentPdf = null;
+            let currentPage = 1;
+            let pdfDoc = null;
+
+            // Gestion de la modal
+            const modal = document.getElementById('pdf-modal');
+            const closeButton = document.querySelector('.close-button');
+            const prevButton = document.getElementById('prev-page');
+            const nextButton = document.getElementById('next-page');
+            const pageNum = document.getElementById('page-num');
+            const pageCount = document.getElementById('page-count');
+
+            closeButton.onclick = () => {
+                modal.style.display = 'none';
+            };
+
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
+
+            // Fonction pour charger et afficher une page du PDF
+            async function renderPage(pageNum) {
+                const page = await pdfDoc.getPage(pageNum);
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const viewport = page.getViewport({ scale: 1.5 });
+
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+
+                const viewer = document.getElementById('pdf-viewer');
+                viewer.innerHTML = '';
+                viewer.appendChild(canvas);
+
+                await page.render({
+                    canvasContext: ctx,
+                    viewport: viewport
+                }).promise;
+            }
+
+            // Gestion des boutons de navigation
+            prevButton.onclick = () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderPage(currentPage);
+                    pageNum.textContent = currentPage;
+                }
+            };
+
+            nextButton.onclick = () => {
+                if (currentPage < pdfDoc.numPages) {
+                    currentPage++;
+                    renderPage(currentPage);
+                    pageNum.textContent = currentPage;
+                }
+            };
+
+            // Fonction pour charger un PDF
+            async function loadPDF(url) {
+                try {
+                    const loadingTask = pdfjsLib.getDocument(url);
+                    pdfDoc = await loadingTask.promise;
+
+                    pageCount.textContent = pdfDoc.numPages;
+                    currentPage = 1;
+                    pageNum.textContent = currentPage;
+
+                    await renderPage(currentPage);
+                    modal.style.display = 'block';
+                } catch (error) {
+                    console.error('Erreur lors du chargement du PDF:', error);
+                    alert('Erreur lors du chargement du PDF');
+                }
+            }
+
+            // Gestion des boutons CV
+            document.querySelectorAll('.cv-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pdfUrl = button.dataset.cv;
+                    currentPdf = pdfUrl;
+                    loadPDF(pdfUrl);
+                });
+            });
+        </script>
+        <script src="https://widget.rss.app/v1/ticker.js" type="text/javascript" async></script>
+        <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+        <script src="script.js"></script>
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,193 @@
+/* Styles spécifiques pour comores.html */
+.main-content-comores {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Section Musée */
+.museum-section {
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.museum-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #006400, #F4D03F);
+}
+
+.museum-section h2 {
+    color: #006400;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.museum-section p {
+    color: #2c3e50;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Sections Culture */
+.culture-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.culture-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.culture-item:hover {
+    transform: translateY(-5px);
+}
+
+.section-title.green {
+    color: #006400;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title.green::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #F4D03F;
+}
+
+.culture-item p {
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.links-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.links-group a {
+    color: #1B3C6A;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+.links-group a:hover {
+    color: #006400;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .culture-sections {
+        grid-template-columns: 1fr;
+    }
+    
+    .museum-section {
+        padding: 30px 20px;
+    }
+    
+    .museum-section h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content-comores {
+        padding: 20px 15px;
+    }
+
+    .museum-section {
+        margin-bottom: 40px;
+        padding: 25px;
+        padding-top: 120px;
+    }
+
+    .museum-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .museum-section p {
+        font-size: 0.9rem;
+    }
+
+    .culture-item {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .section-title.green {
+        font-size: 1.3rem;
+    }
+
+    .culture-item p {
+        font-size: 0.9rem;
+    }
+
+    .links-group {
+        align-items: flex-start;
+    }
+
+    .links-group a {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content-comores {
+        padding: 15px 10px;
+    }
+
+    .museum-section {
+        border-radius: 8px;
+        padding-top: 125px;
+    }
+
+    .museum-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .culture-sections {
+        gap: 20px;
+    }
+
+    .culture-item {
+        padding: 15px;
+    }
+
+    .section-title.green {
+        font-size: 1.2rem;
+    }
+
+    .links-group a {
+        font-size: 0.8rem;
+    }
+}
